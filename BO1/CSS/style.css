@@ -1,0 +1,17 @@
+.header__text{
+    margin: 0 auto;
+    color: white;
+    background-color: forestgreen;
+    width: 600px;
+    text-align: center;
+    padding: 4px 0;
+}
+.body__text{
+    color: blue;
+}
+.body__text-item{
+    background-color: gold;
+    width: 700px;
+    font-size: 14px;
+    font-weight: 800;
+}
