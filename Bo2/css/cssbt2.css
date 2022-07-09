@@ -1,0 +1,105 @@
+*{
+    padding:0;
+    margin: 0;
+}
+
+.box-css{
+    height: 100%;
+    width: 100%;
+    
+}
+.box{
+    height:100px;
+    width: 200px;
+    background-color: green;  
+    text-align: center;
+    line-height: 100px;
+}
+.box.box-top-left{
+    left: 0;
+    top: 0;
+    position: relative;
+}
+.box.box-top-center{
+    left: 50%;
+    top: 0;
+    position:absolute;
+    transform: translateX(-50%);
+}
+.box.box-top-right{
+    right: 0;
+    top: 0;
+    position:absolute;
+}
+.box.box-left-center{
+    left: 0;
+    top: 50%; 
+    position: absolute; 
+    transform: translateY(-50%);
+}
+.box.box-right-center{
+    right: 0;
+    top: 50%; 
+    position: absolute; 
+    transform: translateY(-50%);
+}
+.box.box-bottom-left{
+    bottom: 0;
+    left: 0;
+    position: absolute;  
+
+}
+.box.box-bottom-center{
+    bottom: 0;
+    left: 50%;
+    position: absolute;  
+    transform: translateX(-50%);
+
+}
+.box.box-bottom-right{
+    bottom: 0;
+    right: 0;
+    position: absolute;  
+}
+.box.box-center-center{
+    top: 50%;
+    left: 50%;
+    position: absolute;  
+   transform: translate(-50%,-50%);
+   
+}
+.box-small{
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    line-height: 50px;
+}
+.box-small.box-red-top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+   transform: translate(-100%,-100%);  
+}
+.box-small.box-red-top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+   transform: translate(100%,-100%);   
+}
+.box-small.box-red-bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   transform: translate(100%,100%);  
+    
+}
+.box-small.box-red-bottom-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+   transform: translate(-100%,100%); 
+    
+}
+
+
+
