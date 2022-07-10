@@ -9,7 +9,7 @@
 .text{
   height: 200px;
     width: 600px;
-    background-color: blueviolet;
+    background-color: rgb(71, 10, 128);
     text-align: center;
     margin: 0 auto;
    
@@ -18,14 +18,9 @@
     color: #fff;
     padding: 20px;
     font-family: UTM;
-    font-size: 18px;
-   
-   
+    font-size: 18px;     
 }
 .modify{
   font-family: Cubano;
-  color: rgb(0, 0, 0);
- 
-
-
+  color: rgb(255, 255, 255);
 }
