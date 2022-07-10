@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    background-color: blue;
+}
+.content h1{
+    text-align: center;
+    margin: 0 auto;
+    background-color: green;
+    color: #fff;
+    width: 500px;
+    padding: 5px;
+}
+.content__item--highlight{
+    background-color: yellow;
+    width: 400px;
+}
