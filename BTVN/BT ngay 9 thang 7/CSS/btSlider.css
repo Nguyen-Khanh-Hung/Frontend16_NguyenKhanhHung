@@ -10,6 +10,7 @@ body{
     height: 500px;
     background-color: rgb(31, 143, 203);
     position: relative;
+    
 }
 .container__heading{
     position: absolute;

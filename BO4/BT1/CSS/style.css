@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+    height: 200px;
+    width: 700px;
+    background-color: yellow;
+    text-align: center;
+    vertical-align: middle;
+  
+}
+.container__box1,.container__box2{
+    display: inline-block;
+    background-color: black;
+    width: 100px;
+}
+.container__box1{
+    height: 100%;
+}
+.container__box2{
+    height: 100px; 
+    vertical-align: 50px;
+}

@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+
+.container{
+    margin: 0 auto;
+    width: 800px;
+    margin-top: 100px;
+    background-color: burlywood;
+    height: 400px;
+    font-size: 0;
+    
+}
+.box1, .box2{
+    display: inline-block;
+    color: #fff;  
+    font-size: 20px;
+}
+.box1{
+    width: 30%;
+    background-color: green;
+    vertical-align: text-top;
+    border: 3px solid black;
+
+}
+
+
+.box2 p{
+    border: 3px solid black;
+}
+.box2{
+    width:70%;
+    background-color:blue;
+    vertical-align: text-top;
+}
