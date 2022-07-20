@@ -72,7 +72,11 @@ html{
    border: 1px solid #fff;
     margin-top: 20px;
 }
-
+.container__button:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
 .pointer{
     position: absolute;
     bottom:0;
