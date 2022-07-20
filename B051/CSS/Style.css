@@ -33,11 +33,13 @@ html{
     margin-bottom: 10px;
 }
 
-.container__left,.container__right{ 
+.container__left{
     padding-left: 40px;
-
 }
-
+    
+.container__right{ 
+    padding-right: 40px;
+}
 .container__left-icon,.container__right-icon{
    
     color: #fff;
@@ -58,7 +60,6 @@ html{
     color: black;
     cursor: pointer;
 }
-
 
 .pointer{
     position: absolute;
