@@ -8,33 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="form">
+<body> 
+        <div class="form-submit">
             <header class="header">
                 <div class="header__heading">Submit a tool</div>
                 <div class="header__close">
                     <i class="header__close-icon fa-solid fa-xmark"></i>
                 </div>
             </header>
-            <div class="page-layout">
-                <div class="page-layout__heading">Name</div>
-                <div class="page-layout__heading-sub">ZendVN</div>
-                <div class="page-layout__heading">Link to resource</div>
-                <div class="page-layout__heading-sub">https://zendvn.com/</div>
-                <div class="page-layout__heading">Category</div>
-                <div class="page-layout__heading-sub">Select a cate
-                    <div class="page-layout__heading-down">
-                        <i class="page-layout__down-icon fa-solid fa-chevron-down"></i>
-                       </div>
-                </div>
-               
+              <form action="">
+              
+            <label class="form__label"  for="">Name</label>
+            <input class="form__input" placeholder="Your Name" type="text">
+            <label class="form__label" for="">Link to source</label>
+            <input class="form__input" placeholder="Your link" type="text">
+            <div class="row">
+                <label class="form__label" for="">Category</label>       
+                <input class="form__input " placeholder="Select a Category" type="text">
+                        <i class="form__input-icon fa-solid fa-caret-down"></i>
+                  
             </div>
+           
+           
+         
             <div class="submit">
-               <button class="btn-submit">Submit</button> 
-            </div>
+                <button class="btn-submit">Submit</button> 
+             </div>
+            </form>
+            
         </div>
          
-    </div>
 </body>
 </html>

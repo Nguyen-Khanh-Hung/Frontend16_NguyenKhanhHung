@@ -7,7 +7,11 @@ body{
     background-color: rgb(234, 234, 234);
 }
 .container{
-    margin: 0 auto;
+  
+}
+.form-submit{
+    margin-top: 50px;
+    margin: 50px auto;
     width: 450px;
     text-align: center;
     background-color: #ffffff;
@@ -15,9 +19,7 @@ body{
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.form{
-    margin-top: 50px;
-}
+
 .header{
     background-color: #1d1e54;
     height: 100px;
@@ -41,6 +43,8 @@ body{
     height: 25px;
     line-height: 25px;
     text-align: center;
+    cursor: pointer;
+
 }
 .header__close-icon{
     color: #ffffff;
@@ -48,41 +52,41 @@ body{
     font-size: 16px;
     font-weight: bold;
 }
-.page-layout{
-   width: 300px;
-    margin: 0 auto;
+form{
     text-align: left;
-    color: #1d1e54;
-    font-weight: 500;
+   padding: 40px 60px;
+    
+}
+.form__input{
+    display: block;
+    width: 100%;
+    border: 0px solid;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 10px 0;
+    margin-bottom: 10px;
 }
 
-.page-layout__heading{
-    margin: 40px 0 7px 0;
-    font-size: 10px;
+.row{
+    position: relative;
 }
-.page-layout__heading-sub{
-border-bottom: 0.5px solid black;
-padding-bottom: 8px;
-font-size: 14px;
-font-weight: 520;
-}
-.page-layout__heading-down{
-    float: right;
-}
-.page-layout__down-icon{
-
+.form__input-icon{
+    position: absolute;
+   bottom: 10px;
+   right: 0;
 }
 .submit{
-    margin-top: 40px;
     padding-bottom: 40px;
+    text-align: center;
+    margin-top: 40px;
 }
 .btn-submit{
     background-color: #1d1e54;
-    width: 200px;
-    height: 50px;
+    padding: 20px 40px;
     color: #ffffff;
-    border-radius: 50px;
+    border-radius: 30px;
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-weight: 700;
+    cursor: pointer;
 }

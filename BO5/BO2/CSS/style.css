@@ -1,0 +1,37 @@
+.container{
+    margin: 200px auto;
+    text-align: center;
+    
+}
+.btn-green{
+    width: 300px;
+    height: 100px;
+    color: #fff;
+    background-color: green;
+    border: unset; 
+    font-size: 20px;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-green:hover::before {
+    transform: translate(50%,200%) rotate(135deg);
+    /* transition: all 1s; */
+}
+.btn-green::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    left: 0;
+    top: 0;
+    transition: all 1.5s;
+    transform: translate(-50%,-200%) rotate(135deg);
+    background-color: rgba(0, 0, 0,0.1);
+}
+
+/* @keyframes thuNho {
+    100%  {top: -5px; width: 100px;}
+    100% {top: 0; width: 300px;}
+} */
