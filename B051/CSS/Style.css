@@ -20,40 +20,8 @@ html{
     top: 0;
     background: url(./tải\ xuống.jpg) top center / cover no-repeat;
     width: 100%;
-    filter: brightness(85%);
-}
-.pointer{
-    position: absolute;
 }
 
-.text{
-    display: flex;
-    
-}
-.container__left{
-    padding-left: 20px;
-
-}
-.container__right{
-    padding-right: 20px;
-
-}
-.container__left-icon{
-    padding-left: 20px;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-
-    
-}
-.container__right-icon{
-    padding-right: 20px;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-
-
-}
 .container__text{
     width: 80%;
 }
@@ -64,6 +32,27 @@ html{
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+
+.container__left,.container__right{ 
+    padding-left: 20px;
+
+}
+
+.container__left-icon{
+    padding-left: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+   
+}
+.container__right-icon{
+    padding-right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
 .container__button{
    padding: 10px 20px;
    border-radius: 30px;
@@ -77,12 +66,15 @@ html{
     color: black;
     cursor: pointer;
 }
+
+
 .pointer{
     position: absolute;
     bottom:0;
     left: 50%;
     display: flex;
     transform: translateX(-50%);
+    list-style: none;
 }
 .poin-item{
     height: 15px;
