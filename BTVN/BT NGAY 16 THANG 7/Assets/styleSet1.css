@@ -43,7 +43,11 @@ html{
 .image-zoom:hover ~.text-transition--1 {
     
     transition: all 0.5s;
+    display: flex;
+    
 }
+
+
 
 .image-zoom:hover ~.text-transition--2 {
     transition: all 0.7s;
@@ -67,6 +71,8 @@ html{
 .text-transition--3{
     top:51%;
 }
+
+
 
 .text-hover{
     position: absolute;
