@@ -25,24 +25,7 @@ html{
 .pointer{
     position: absolute;
 }
-.pointer{
-    position: absolute;
-    bottom:0;
-    left: 50%;
-    display: flex;
-    transform: translateX(-50%);
-}
-.poin-item{
-    height: 15px;
-    width: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-.poin-item--yellow{
-    background-color: yellow;
-}
+
 .text{
     display: flex;
     
@@ -88,4 +71,23 @@ html{
    color: #fff;
    border: 1px solid #fff;
     margin-top: 20px;
+}
+
+.pointer{
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+.poin-item{
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.poin-item--yellow{
+    background-color: yellow;
 }
