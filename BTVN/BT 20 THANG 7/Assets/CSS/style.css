@@ -63,7 +63,7 @@ html{
     border-radius: 50%;
     text-align: center;
     line-height: 35px;
-    margin-right: 10px;
+    margin-right: 10px!important;
 }
 .social-icon{
     color: blue;
@@ -82,6 +82,9 @@ html{
 
 .social-icon--red{
     color: red;
+}
+.footer__conect-social li{
+    margin: unset;
 }
 .footer__conect-anchor{
     list-style: none;
