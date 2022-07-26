@@ -1,0 +1,18 @@
+:root{
+    --white-color: #FFF;
+    --black-color: #000;
+    --text-color: #333;
+    --base-color:#4368C7;
+}
+@font-face {
+    font-family: inter;
+    src: url(./Inter-VariableFont_slnt\,wght.ttf);
+}
+html{
+    font-family: inter;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+}
+.mt{
+    margin-top: 20px;
+}
