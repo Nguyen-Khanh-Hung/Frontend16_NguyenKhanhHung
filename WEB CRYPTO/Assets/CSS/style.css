@@ -24,9 +24,9 @@
     font-weight: 600;
 }
 .header__nav-list{
+    display: flex;
     list-style: none;
     padding-left: 0;
-    display: flex;
     justify-content: space-evenly;
     width: 60%;
 }
@@ -91,11 +91,9 @@
     font-weight: bold;
     font-size: 1.5rem;
 }
-.create-account{
-    
-}
+
 .create-btn{
-    width: 354px;
+    width: 290px;
     height: 54px;
     border-radius: 10px;
     border: none;
@@ -112,9 +110,10 @@
     position: relative;
     text-align: center;
     margin-top: 56px;
+   
 }
-.frame{
-    
+.frame-img{
+    width: 100%;
 }
 .icon-youtube{
     position: absolute;
@@ -141,9 +140,10 @@
 }
 .instruction__trade{
     position: relative;
-    width: 380px;
+    height: 330px;
     border-radius: 25px;
     text-align: center;
+   
     background:linear-gradient(#dae4ff, rgba(51, 55, 105, 0.04) 85%);
 }
 .instruction__icon{
@@ -162,10 +162,9 @@
     color: var(--base-color);
 }
 .instruction__title{
-    margin-top: 110px;
+    padding-top: 110px;
     font-size: 2.5rem;
     font-weight: 800;
-    
 }
 .instruction__sub{
     font-size: 1.6rem;
@@ -209,7 +208,7 @@
     align-items: center;
     color: var(--base-color);
     height: 80px;
-    line-height: 80px;
+    line-height: 40px;
     text-align: center;
 }
 .start__title{
@@ -233,7 +232,7 @@
 }
 .input-contact{
     height: 50px;
-    width: 300px;
+    width: 290px;
     border-radius: 15px;
     padding-left: 10px;
     border: 1px solid rgb(147, 147, 147);
@@ -248,13 +247,9 @@
     background-color: var(--base-color);
     color: var(--white-color);
 }
-.journey-crypto-img{
-
-}
-
 .statitics{
-  
-   
+    transform: translateY(30%);
+    z-index: -100;
 }
 .statitics__background{
     background-color: var(--base-color);
@@ -262,12 +257,15 @@
     color: var(--white-color);
     position: relative;
     z-index: -5;
+  
 }
 .iphone-13{
-    position: absolute;
-    top: 280px;
-    right: 0;
-    z-index: -2;
+    width: 550px;
+
+    z-index: -6;
+    height: 1000px;
+    transform: translateY(0);
+
 }
 
 .statitics__main{
@@ -283,9 +281,9 @@
     font-size: 1.4rem;
 }
 
-.download-wallet{
-    padding-bottom: 500px;
-    margin-top: 50px
+
+.wallet-text{
+    margin-top: 200px;
 }
 .download-wallet__title{
     font-size: 3.5rem;
@@ -309,13 +307,16 @@
     width: 100%;
     color: var(--white-color);
     z-index: 100;
-    margin-top: -200px;
+    transform: translateY(0);
+    margin-top: -500px;
+   
 }
 .footer-list{
     list-style: none;
 }
 .footer-list__item{
     font-size: 1.4rem;
+    margin-top: 30px;
 }
 .footer-list__link{
     text-decoration: none;
@@ -324,39 +325,42 @@
 .pd{
     padding-top: 50px;
 }
-.footerr ul,li{
-    margin-top: 30px;
-}
-.container-input{
-    margin-top: 80px;
+
+.container__form{
     display: flex;
-    margin-left: -12px;
-    flex: 1;
-    background-color: rgba(160, 160, 160, 0.4);
-    height: 80px;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+ 
+    margin-top: 50px;
+    /* height: 80px; */
     align-items: center;
-    border-radius: 7px;
+    text-align: center;
+    background-color: rgba(154, 154, 154, 0.5);
 }
 .form__text{
-    margin-right: 70px;
-    padding-left: 50px;
-    font-size: 2.4rem;
+    width: 25%;
+    width: 250px;
+    padding: 10px 0;
 }
 .form__input{
-   
-    flex: 1;
-    width: 850px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 20px;
-}
-.form__relative{
+    width: 70%;
+    padding: 10px 0;
+    /* margin-left: auto; */
     position: relative;
 }
-.form__btn{
+
+.form__input--email{
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+}
+
+
+.form-btn{
     position: absolute;
-    right: 10px;
+    right:10px
+    ;
     height: 35px;
     width: 100px;
     top: 50%;
@@ -373,4 +377,10 @@
 }
 .footer__bottom h3{
     font-size: 2.8rem;
+}
+.footer__bottom p{
+    font-size: 1.4rem;
+}
+.flag--country{
+    font-size: 1.8rem;
 }

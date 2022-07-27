@@ -31,9 +31,39 @@
       <div class="header">
         <div class="grid wide">
           <nav class="header__nav">
+            <input class="nav__input" id="responsive" type="checkbox">
+            <label for="responsive" class="nav-btn">
+              <i class="btn-bars fa-solid fa-bars"></i>
+            </label>
+           
+            <nav for="responsive" class="nav__mobile">
+              <ul class="nav__mobile-list">
+                <li class="nav__mobile-item">
+                  <a class="nav__mobile-link" href="">Buy / Sell</a>
+                </li>
+                <li class="nav__mobile-item">
+                  <a class="nav__mobile-link" href="">Grow</a>
+                </li>
+                <li class="nav__mobile-item">
+                  <a class="nav__mobile-link" href="">Markets</a>
+                </li>
+                <li class="nav__mobile-item">
+                  <a class="nav__mobile-link" href="">Business</a>
+                </li>
+                <li class="nav__mobile-item">
+                  <a class="nav__mobile-link" href="">Support</a>
+                </li>
+
+                <label for="responsive" class="btn-exit">
+                  <i class="btn-exit--css fa-solid fa-xmark"></i>
+                </label>
+
+              </ul>
+            </nav>
             <ul class="header__logo">
               Samstickkz
             </ul>
+           <nav class="nav__pc">
             <ul class="header__nav-list">
               <li class="header__nav-item">
                 <a class="header__nav-link" href="">Buy / Sell</a>
@@ -51,6 +81,8 @@
                 <a class="header__nav-link" href="">Support</a>
               </li>
             </ul>
+           </nav>
+          
             <ul class="header__sign">
               <li class="header__sign-in">
                 <a class="header__sign-link" href="">Sign in</a>
@@ -61,6 +93,8 @@
                 >
               </li>
             </ul>
+            <label for="responsive" class="nav__overlay"></label>
+            
           </nav>
         </div>
       </div>
@@ -78,17 +112,20 @@
             pretium augue semper feugiat
           </div>
           <div class="mt"></div>
-          <ul class="text-section__method">
-            <li class="method__item">
-              <a class="method__link" href="">Wallets</a>
-            </li>
-            <li class="method__item">
-              <a class="method__link" href="">Crypto Payments</a>
-            </li>
-            <li class="method__item">
-              <a class="method__link" href="">Crypto ATM Cards</a>
-            </li>
-          </ul>
+          <div class="mobile-method">
+            <ul class="text-section__method">
+              <li class="method__item">
+                <a class="method__link" href="">Wallets</a>
+              </li>
+              <li class="method__item">
+                <a class="method__link" href="">Crypto Payments</a>
+              </li>
+              <li class="method__item">
+                <a class="method__link" href="">Crypto ATM Cards</a>
+              </li>
+            </ul>
+          </div>
+          
           <div class="mt"></div>
           <div class="create-account">
             <button class="create-btn">
@@ -99,15 +136,18 @@
       </div>
       <div class="frame-youtube">
         <div class="grid wide">
-          <div class="frame">
-            <img
-              src="./WEB CRYPTO/Assets/img/unsplash_DcyL0IoCY0A.png"
-              alt=""
-            />
+          <div class="row col p-12 t-12 m-12">
+            <div class="frame">
+              <img class="frame-img"
+                src="./WEB CRYPTO/Assets/img/unsplash_DcyL0IoCY0A.png"
+                alt=""
+              />
+            </div>
+            <div class="icon-youtube">
+              <img src="./WEB CRYPTO/Assets/img/youtube.png" alt="" />
+            </div>
           </div>
-          <div class="icon-youtube">
-            <img src="./WEB CRYPTO/Assets/img/youtube.png" alt="" />
-          </div>
+         
         </div>
       </div>
       <div class="text-section">
@@ -124,6 +164,7 @@
       <div class="instruction">
         <div class="grid wide">
           <div class="row flex">
+            <div class="col p-4 t-6 m-12 m-top">
             <div class="instruction__trade">
               <div class="instruction__icon">
                 <i class="trade-icon--css fa-solid fa-right-left"></i>
@@ -144,7 +185,8 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </div>
             </div>
-
+          </div>
+            <div class="col p-4 t-6 m-12 m-top">
             <div class="instruction__trade">
               <div class="instruction__icon">
                 <i class="trade-icon--css fa-solid fa-arrow-right"></i>
@@ -164,7 +206,8 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </div>
             </div>
-
+          </div>
+            <div class="col p-4 t-6 m-12 m-top">
             <div class="instruction__trade">
               <div class="instruction__icon">
                 <i class="trade-icon--css fa-solid fa-wallet"></i>
@@ -185,11 +228,13 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
       <div class="journey-crypto">
         <div class="grid wide">
           <div class="row flex">
+            <div class="col p-6 t-12">
             <div class="journey-info">
               <div class="journey-crypto__start">
                 <h1 class="start__title">
@@ -219,18 +264,25 @@
                 <button class="btn-contact">Get started</button>
               </div>
             </div>
+            <div class="mr"></div>
+          </div>
+          <div class="col p-6 t-12 m-top">
             <div class="journey-crypto__img">
               <div class="img">
                 <img src="./WEB CRYPTO/Assets/img/3 ipone.png" alt="" />
               </div>
             </div>
           </div>
+            
+          </div>
         </div>
       </div>
       <div class="statitics">
-        <div class="statitics__background">
-          <div class="grid wide">
-            <div class="row flex">
+        <div class="statitics__background">                       
+         
+          <div class="grid wide ">        
+            <div class="row flex relative">
+           
               <div class="statitics__main">
                 <h1 class="statitics__title">$100B</h1>
                 <p>Monthly volume</p>
@@ -245,77 +297,92 @@
               </div>
             </div>
           </div>
-          <div class="iphone-13">
-            <img
-              class="iphone-css"
-              src="./WEB CRYPTO/Assets/img/iPhone 13.png"
-              alt=""
-            />
-          </div>
+          
         </div>
       </div>
       <div class="download-wallet">
         <div class="grid wide">
-          <h1 class="download-wallet__title">
-            Spend without limits without <br />
-            Bitcoin Virtual Card
-          </h1>
-          <div class="mt"></div>
-          <p class="download-wallet__content">
-            Discover a whole new world with out Visa enbaled bitcoin soending
-            card. - spend without limits
-          </p>
-          <div class="mt"></div>
-
+          <div class="row flex">
+          <div class="wallet-text">
+            <h1 class="download-wallet__title">
+              Spend without limits without <br />
+              Bitcoin Virtual Card
+            </h1>
+            <div class="mt"></div>
+            <p class="download-wallet__content">
+              Discover a whole new world with out Visa enbaled bitcoin soending
+              card. - spend without limits
+            </p>
+            <div class="mt"></div>
+  
           <button class="btn-download">Downalod Wallet</button>
+            <div>
+          </div>
+       
+           
+      </div>
+      <div>
+        <img 
+        class="iphone-13 iphone-css"
+        src="./WEB CRYPTO/Assets/img/iPhone 13.png"
+        alt=""
+      />
+       </div>
+          </div>
+        
         </div>
       </div>
       <footer class="footerr">
         <div class="grid wide">
           <div class="row flex pd">
-            <div class="lagos pd">
-              <h1>Laos</h1>
-              <ul class="footer-list">
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    >8a Ayo Tayo street <br />
-                    Lagos, Nigeria</a
-                  >
-                </li>
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"> </i>Samuel:
-                    +2347032346910</a
-                  >
-                </li>
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"></i>Office: +2348075862543</a
-                  >
-                </li>
-              </ul>
+            <div class="col">
+              <div class="lagos pd">
+                <h1>Laos</h1>
+                <ul class="footer-list">
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      >8a Ayo Tayo street <br />
+                      Lagos, Nigeria</a
+                    >
+                  </li>
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      ><i class="mr fa-solid fa-mobile"> </i>Samuel:
+                      +2347032346910</a
+                    >
+                  </li>
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      ><i class="mr fa-solid fa-mobile"></i>Office: +2348075862543</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="UAE pd">
-              <h1>UAE</h1>
-              <ul class="footer-list">
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    >8a Ayo Tayo street <br />
-                    Lagos, Nigeria</a
-                  >
-                </li>
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"></i>Samuel: +2347032346910</a
-                  >
-                </li>
-                <li class="footer-list__item">
-                  <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"></i>Office: +2348075862543</a
-                  >
-                </li>
-              </ul>
+            <div class="col">
+              <div class="UAE pd">
+                <h1>UAE</h1>
+                <ul class="footer-list">
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      >8a Ayo Tayo street <br />
+                      Lagos, Nigeria</a
+                    >
+                  </li>
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      ><i class="mr fa-solid fa-mobile"></i>Samuel: +2347032346910</a
+                    >
+                  </li>
+                  <li class="footer-list__item">
+                    <a class="footer-list__link" href=""
+                      ><i class="mr fa-solid fa-mobile"></i>Office: +2348075862543</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
+           <div class="col">
             <div class="london pd">
               <h1>London</h1>
               <ul class="footer-list">
@@ -327,41 +394,51 @@
                 </li>
                 <li class="footer-list__item">
                   <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"></i>Samuel: +2347032346910</a
+                    ><i class="mr fa-solid fa-mobile"></i>Samuel: +2347032346910</a
                   >
                 </li>
                 <li class="footer-list__item">
                   <a class="footer-list__link" href=""
-                    ><i class="fa-solid fa-mobile"></i>Office: +2348075862543</a
+                    ><i class="mr fa-solid fa-mobile"></i>Office: +2348075862543</a
                   >
                 </li>
               </ul>
             </div>
+           </div>
+           
           </div>
-          <div class="container-input">
-         <div class="form__text">
-          <p>Newsletter Sign Up</p>
-         </div>   
-            <div class="form">
-              <div class="form__relative">
-                <input class="form__input" type="text" placeholder="Enter your email here..."/>
-                <button class="form__btn">Submit</button>
-              </div>
-             
-            </div>
-            
-          </div>
-          <div class="row flex footer__bottom">
-            <h3>Samstickkz</h3>
-            <p>© 2018 samstickkz Media • All Rights Reserved</p>
-            <div class="flag">
-              <i class="fa-solid fa-flag"></i>
-              <select name="" id="">
-                <option value="">England</option>
-                <option value="">Pháp</option>
-              </select>
-            </div>
-          </div>
+   </div>
+
+    <div class="grid wide">
+      <div class="container__form">
+       
+        <div class="form__text">
+         <h1>Newsletter Sign Up</h1> 
+        </div>
+
+        <div  class="form__input pd-bottom">
+          <input placeholder="Enter your email here..." class="form__input--email" type="text">
+          <button class="form-btn">Submit</button>
+        </div>
+     
+      </div>
+      
+    </div>
+
+   <div class="grid wide">
+    <div class="row flex footer__bottom">
+      <h3 >Samstickkz</h3>
+      <p >© 2018 samstickkz Media • All Rights Reserved</p>
+      <div class="flag  m-top">
+        <i class="flag--country fa-solid fa-flag"></i>
+        <select name="" id="">
+          <option value="">England</option>
+          <option value="">Pháp</option>
+        </select>
+      </div>
+    </div>
+   </div>
+         
         </div>
       </footer>
     </div>

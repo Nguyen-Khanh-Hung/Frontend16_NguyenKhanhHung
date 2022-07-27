@@ -16,3 +16,9 @@ html{
 .mt{
     margin-top: 20px;
 }
+.relative{
+    position: relative;
+}
+.mr{
+    margin-right: 10px;
+}

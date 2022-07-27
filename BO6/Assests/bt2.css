@@ -27,7 +27,7 @@
   }
 
   /* Tablet */
-  @media (max-width: 1023px) and (min-width: 40px) {
+  @media (max-width: 1023px) and (min-width:740px) {
     .image{
         width: 50%;
     }
