@@ -27,12 +27,10 @@
     display: flex;
     list-style: none;
     padding-left: 0;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 60%;
 }
-.header__nav-item{
-    
-}
+
 .header__nav-link{
     text-decoration: none;
     color: black;
@@ -193,11 +191,6 @@
     background:linear-gradient(#dae4ff, rgba(51, 55, 105, 0) 85%);
 }
 
-
-.journey-crypto{
-   padding-bottom: 90px;
-   
-}
 .journey-info{
     padding-left: 12px;
     padding-right: 12px;
@@ -232,7 +225,7 @@
 }
 .input-contact{
     height: 50px;
-    width: 290px;
+    width: 250px;
     border-radius: 15px;
     padding-left: 10px;
     border: 1px solid rgb(147, 147, 147);
