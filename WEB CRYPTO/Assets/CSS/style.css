@@ -28,7 +28,7 @@
     list-style: none;
     padding-left: 0;
     justify-content: space-between;
-    width: 60%;
+    width: 90%;
 }
 
 .header__nav-link{
@@ -239,6 +239,7 @@
     border: none;
     background-color: var(--base-color);
     color: var(--white-color);
+    cursor: pointer;
 }
 .statitics{
     transform: translateY(30%);
@@ -293,6 +294,7 @@
     background-color: #4368C7;
     color: var(--white-color);
     box-shadow: 0 4px rgba(0, 0, 0,0.1);
+    cursor: pointer;
 }
 
 .footerr{
