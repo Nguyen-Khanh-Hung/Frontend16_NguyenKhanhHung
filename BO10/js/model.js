@@ -10,3 +10,4 @@ function addBackColor(){
 }
 
 ELEMENT_btnAddTask.addEventListener('click',showTask,addBackColor)
+ELEMENT_btnAddTask.addEventListener('click',addBackColor)
