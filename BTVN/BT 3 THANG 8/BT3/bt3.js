@@ -8,9 +8,6 @@ var node2 = document.querySelector('.telecom2')
       
     ]
     
-   
-     
-
 
    
 setInterval(function(){
