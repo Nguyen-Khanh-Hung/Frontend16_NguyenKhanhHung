@@ -1,0 +1,15 @@
+.form-inline{
+    display: none;
+}
+.form-inline.open{
+    display: block;
+}
+
+.add-color{
+    background-color: red!important;
+    color: white!important;
+}
+#btnAddTask.add-color{
+   background-color: red!important;
+    color: white!important;
+}
