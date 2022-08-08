@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TODOLIST</title>
+	
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!--
+		Notice the use of %PUBLIC_URL% in the tags above.
+		It will be replaced with the URL of the `public` folder during the build.
+		Only files inside the `public` folder can be referenced from the HTML.
+		Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+		work correctly both with client-side routing and a non-root public URL.
+		Learn how to configure a non-root public URL by running `npm run build`.
+	-->
+	<title>Training React App</title>
+</head>
+<body>
+	<div class="container">
+
+		<!-- TITLE : START -->
+		<div class="page-header">
+		  <h1>Project 01 - ToDo List <small>NodeJS</small></h1>
+		</div>
+		<!-- TITLE : END -->
+
+		<!-- CONTROL (SEARCH + SORT + ADD) : START -->
+		<div class="row">
+			<!-- SEARCH : START -->
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<div class="input-group">
+					<input id="search" type="text" class="form-control" ref="search" placeholder="Search for..." />
+					<span class="input-group-btn">
+						<button  class="btn btn-info" type="button" onclick="searchFunction()">Go!</button>
+					</span>
+				</div>
+			</div>
+			<!-- SEARCH : END -->
+			<div class="dropdown">
+				<label for="sort"></label><select  id="sort" onchange="ascendingTask()">
+					<option value="default">SORT BY</option>
+					<option value="az">NAME A-Z</option>
+					<option value="za">NAME Z-A</option>
+					<option value="levelHigh">LEVEL A-Z</option>
+					<option value="Highlevel">LEVEL Z-A</option>
+				</select>
+		</div>
+		
+			<!-- ADD : START -->
+			<div class="col-md-offset-7 col-md-9" style="margin-left: 330px;margin-top: -30px;width: 350px;";>
+				<button type="button" id="btnAddTask" style="outline: none;" class="btn btn-info btn-block">Add Task</button>
+			</div>
+			<!-- ADD : END -->
+
+		</div>
+		<!-- CONTROL (SEARCH + 
+			
+			+ ADD) : END -->
+		
+		<!-- FORM : START -->
+		<div class="row">
+			<div class="col-md-offset-7 col-md-6" id="formAddTask">
+				<form action="" method="POST" class="form-inline">
+					<div class="form-group">
+						<label class="sr-only" for="">label</label>
+						<input type="text" id="input__task" class="form-control" placeholder="Task Name" ref="task_name" />
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="">label</label>
+						<select name="ds" id="inputDs" class="form-control" required="required" ref="task_level">
+							<option selected="selected" value="Small" >Small</option>
+							<option id="1"  value="Medium" >Medium</option>
+							<option id="2" value="High">High</option>
+						</select>
+					</div>
+
+					<button  type="button" class="btn btn-submit btn-primary">Submit</button>
+					<button onclick="resetForm()" type="button" id="btn-cancel" class="btn btn-default" >Cancel</button>
+				</form>
+			</div>
+		</div>
+		<!-- FORM : END -->
+
+		<!-- LIST : START -->
+
+		<div class="panel panel-success" >
+			<div class="panel-heading">List Task</div>
+			<table id="tableTask" class="table table-hover ">
+				<thead>
+					<tr>
+						<th style="width: 10%" class="text-center">#</th>
+						<th>Task</th>
+						<th style="width: 20%" class="text-center">Level</th>
+						<th style="width: 20%">Action</th>
+					</tr>
+				</thead>
+
+				<tbody id="taskRow">
+					
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+
+	
+	<!--
+		This HTML file is a template.
+		If you open it directly in the browser, you will see an empty page.
+		You can add webfonts, meta tags, or analytics to this file.
+		The build step will place the bundled scripts into the <body> tag.
+		To begin the development, run `npm start` or `yarn start`.
+		To create a production bundle, use `npm run build` or `yarn build`.
+	-->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="./js/const.js"></script>
+	<script src="./js/model.js"></script>
+	<script src="./js/view.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+}
+
+div.row {
+	margin: 20px 0px;
+}
+
+span.label-medium {
+	padding: 8px 10px;
+    margin: 0px 8px;
+    font-size: 16px;
+}
+.Small{
+    background-color: rgb(0, 20, 173);
+   
+}
+.High{
+
+    background-color: red;
+}
+.Medium{
+   
+    background-color: gray;
+}
+#sort{
+    border:none;color:white;height: 32px;border-radius: 3px;background-color: #5bc0de;
+    padding: 5px;
+}
+
+option{
+    background-color: white;
+    color: black;
+    border: none;
+    mask-type: 10px
+    ;
+}
