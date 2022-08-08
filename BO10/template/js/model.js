@@ -10,18 +10,18 @@ const handleToggleForm = (close = true) => {
   }
 };
 
-let tasks = getLocalStorage();
-renderTask(tasks);
+  let tasks = getLocalStorage();
+  renderTask(tasks);
 
 // FUNCTION SUBMIT
 
 ELEMENT_SUBMIT.addEventListener("click", function () {
   if (!ELEMENT_inputTask.value) {
-    alert("Hãy nhập task");
+    alert("Vui lòng nhập task");
     return false;
   }
   if (!ELEMENT_Select.value) {
-    alert("Hãy nhập level");
+    alert("Vui lòng nhập level");
     return false;
   }
   
@@ -29,9 +29,9 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
   
   let tasks = getLocalStorage();
 
-  if (taskID ===0 || taskID) {
+    if (taskID ===0 || taskID) {
     tasks[taskID] = {
-      id: "id",
+      
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     };
@@ -40,7 +40,7 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
   }
   else {
     tasks.push({
-      id: "id",
+      
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     });
@@ -48,6 +48,7 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTask(tasks);
+  resetForm()
 });
 
 
@@ -94,40 +95,44 @@ function editTask(id) {
 
   let tasks = getLocalStorage();
 
-
+  formAddTask.style.display = "block";
+  btnAddTask.style.background = "red";
+  btnAddTask.innerHTML = "Close Task";
   if (tasks.length > 0) {
     ELEMENT_inputTask.value = tasks[id].name;
     ELEMENT_Select.value = tasks[id].level;
     ELEMENT_SUBMIT.setAttribute("id", id);
   }
- 
+  
+  ELEMENT_SUBMIT.innerText="Update"
  
 }
 
 // FUNCTION SEARCH TASKS
-function searchFunction() {
-  let valueSearchInput = document.getElementById("search").value;
-  let tasks = getLocalStorage();
-var filterTasks= tasks.filter(function (value) {
- return value.name.toUpperCase().includes(valueSearchInput.toUpperCase());
+  function searchFunction() {
+    let valueSearchInput = document.getElementById("search").value;
+    let tasks = getLocalStorage();
+    var filterTasks= tasks.filter(function (value) {
+  return value.name.toUpperCase().includes(valueSearchInput.toUpperCase());
 
- 
  })
  console.log(filterTasks);
 
+ 
+
     renderTask(filterTasks);
     localStorage.setItem("tasks", JSON.stringify(tasks));
-  
-}
 
+}
 
 
 // FUNCTION RESET
-function resetForm() {
-  ELEMENT_inputTask.value = "";
-  ELEMENT_Select.value = "";
-  ELEMENT_SUBMIT.innerText='Edit'
-}
+  function resetForm() {
+    ELEMENT_inputTask.value = "";
+    ELEMENT_Select.value = "";
+    ELEMENT_SUBMIT.innerText="Submit"
+ 
+  }
 
 
 // DELETE TASKS
