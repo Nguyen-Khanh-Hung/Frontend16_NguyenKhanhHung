@@ -1,14 +1,16 @@
-const handleToggleForm = (close = true) => {
-  if (close) {
-    formAddTask.style.display = "block";
-    btnAddTask.style.background = "red";
-    btnAddTask.innerHTML = "Close Task";
-  } else {
-    formAddTask.style.display = "none";
-    btnAddTask.style.background = "#5bc0de";
-    btnAddTask.innerHTML = "Add Task";
-  }
-};
+btnAddTask.addEventListener('click', function () {
+  formAddTask.style.display = "block";
+  btnAddTask.style.display = "none";
+  closeTask.style.display = "block";
+}) 
+
+closeTask.addEventListener('click', function () {
+  formAddTask.style.display = "none";
+  btnAddTask.style.display = "block";
+  closeTask.style.display = "none";
+}) 
+
+
 
   let tasks = getLocalStorage();
   renderTask(tasks);
@@ -45,11 +47,19 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
       level: ELEMENT_Select.value,
     });
   }
-
+  ELEMENT_SUBMIT.innerHTML='Submit'
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTask(tasks);
   resetForm()
 });
+
+function cancelForm() {
+  formAddTask.style.display = "none";
+  btnAddTask.style.display = "block";
+  closeTask.style.display = "none";
+
+}
+
 
 
 // FUNCTION SORT
@@ -78,8 +88,6 @@ function ascendingTask(){
 }
 
 
-
-
 // FUNCTION SEARCH TASKS
 // function searchTask() {
 //   let valueSearchInput = document.getElementById("search").value;
@@ -96,8 +104,8 @@ function editTask(id) {
   let tasks = getLocalStorage();
 
   formAddTask.style.display = "block";
-  btnAddTask.style.background = "red";
-  btnAddTask.innerHTML = "Close Task";
+  btnAddTask.style.display = "none";
+  closeTask.style.display = "block";
   if (tasks.length > 0) {
     ELEMENT_inputTask.value = tasks[id].name;
     ELEMENT_Select.value = tasks[id].level;
@@ -116,24 +124,16 @@ function editTask(id) {
   return value.name.toUpperCase().includes(valueSearchInput.toUpperCase());
 
  })
- console.log(filterTasks);
-
- 
-
     renderTask(filterTasks);
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
 }
-
-
 // FUNCTION RESET
-  function resetForm() {
-    ELEMENT_inputTask.value = "";
-    ELEMENT_Select.value = "";
-    ELEMENT_SUBMIT.innerText="Submit"
- 
-  }
+function resetForm() {
+  ELEMENT_inputTask.value = "";
+  ELEMENT_Select.value = "";
 
+}
 
 // DELETE TASKS
 
@@ -145,7 +145,6 @@ function deleteTask(id) {
     renderTask(getLocalStorage());
   }
 
- 
   // FUNCTION RENDERTASK
 }
 function renderTask(tasks) {
@@ -169,6 +168,5 @@ function renderTask(tasks) {
 }
 
 function getLocalStorage() {
-  return localStorage.getItem("tasks")
-    ? JSON.parse(localStorage.getItem("tasks")): [];
+  return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")): [];
 }

@@ -54,6 +54,8 @@
 			<!-- ADD : START -->
 			<div class="col-md-offset-7 col-md-9" style="margin-left: 330px;margin-top: -30px;width: 350px;";>
 				<button type="button" id="btnAddTask" style="outline: none;" class="btn btn-info btn-block">Add Task</button>
+				<button  type="button" id="btnCloseTask" style="outline: none;margin-top: 0;   background-color: red;;
+				color: white;" class="btn btn-info btn-block">Close Task</button>
 			</div>
 			<!-- ADD : END -->
 
@@ -65,7 +67,7 @@
 		<!-- FORM : START -->
 		<div class="row">
 			<div class="col-md-offset-7 col-md-6" id="formAddTask">
-				<form action="" method="POST" class="form-inline">
+				<form action="" method="POST" class="form-inline" >
 					<div class="form-group">
 						<label class="sr-only" for="">label</label>
 						<input type="text" id="input__task" class="form-control" placeholder="Task Name" ref="task_name" />
@@ -80,7 +82,7 @@
 					</div>
 
 					<button  type="button" class="btn btn-submit btn-primary">Submit</button>
-					<button onclick="resetForm()" type="button" id="btn-cancel" class="btn btn-default" >Cancel</button>
+					<button onclick="cancelForm()" type="button" id="btn-cancel" class="btn btn-default" >Cancel</button>
 				</form>
 			</div>
 		</div>
@@ -99,11 +101,9 @@
 						<th style="width: 20%">Action</th>
 					</tr>
 				</thead>
-
 				<tbody id="taskRow">
 					
 				</tbody>
-
 			</table>
 		</div>
 	</div>

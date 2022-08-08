@@ -1,6 +1,9 @@
 // Add Task
+
 const btnAddTask       =    document.getElementById("btnAddTask");
+const closeTask       =    document.getElementById("btnCloseTask");
 const formAddTask      =    document.getElementById("formAddTask");
+
 const ELEMENT_SUBMIT   =    document.querySelector(".btn-submit");
 const ELEMENT_inputTask=    document.getElementById("input__task");
 const ELEMENT_Select   =      document.getElementById("inputDs");

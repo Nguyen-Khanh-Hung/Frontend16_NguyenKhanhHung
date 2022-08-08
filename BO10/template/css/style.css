@@ -5,7 +5,13 @@
 div.row {
 	margin: 20px 0px;
 }
+.none{
+    display: none;
+}
+.block{
+    display: block;
 
+}
 span.label-medium {
 	padding: 8px 10px;
     margin: 0px 8px;
@@ -34,4 +40,8 @@ option{
     border: none;
     mask-type: 10px
     ;
+}
+.btnCloseTask{
+    background-color: rgb(189, 0, 0);
+    color: white;
 }
