@@ -61,7 +61,6 @@ function cancelForm() {
 }
 
 
-
 // FUNCTION SORT
 function ascendingTask(){
   let tasks = getLocalStorage();
