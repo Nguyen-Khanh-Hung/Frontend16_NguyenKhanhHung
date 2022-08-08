@@ -24,21 +24,23 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
     alert("Hãy nhập level");
     return false;
   }
+  
   let taskID = this.getAttribute("id");
   
-
   let tasks = getLocalStorage();
 
   if (taskID ===0 || taskID) {
     tasks[taskID] = {
+      id: "id",
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     };
-    console.log(tasks[taskID]);
-    
+   
     this.removeAttribute("id");
-  } else {
+  }
+  else {
     tasks.push({
+      id: "id",
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     });
@@ -85,40 +87,46 @@ function ascendingTask(){
 //   });
 //   renderTask(taskSearch);
 // }
-
-
-// FUNCTION SEARCH TASKS
-function searchFunction() {
-  let valueSearchInput = document.getElementById("search").value;
-  let tasks = getLocalStorage();
-var filterTasks= tasks.filter(function (value) {
- return value.name.toUpperCase().includes(valueSearchInput.toUpperCase())
- })
-
- localStorage.setItem("tasks", JSON.stringify(tasks));
-
-    renderTask(filterTasks);
-
-}
-
 // EDIT TASKS
+
+
 function editTask(id) {
+
   let tasks = getLocalStorage();
-  formAddTask.style.display = "block";
-  btnAddTask.style.background = "red";
-  btnAddTask.innerHTML = "Close Task";
+
+
   if (tasks.length > 0) {
     ELEMENT_inputTask.value = tasks[id].name;
     ELEMENT_Select.value = tasks[id].level;
     ELEMENT_SUBMIT.setAttribute("id", id);
   }
  
+ 
 }
+
+// FUNCTION SEARCH TASKS
+function searchFunction() {
+  let valueSearchInput = document.getElementById("search").value;
+  let tasks = getLocalStorage();
+var filterTasks= tasks.filter(function (value) {
+ return value.name.toUpperCase().includes(valueSearchInput.toUpperCase());
+
+ 
+ })
+ console.log(filterTasks);
+
+    renderTask(filterTasks);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  
+}
+
+
 
 // FUNCTION RESET
 function resetForm() {
   ELEMENT_inputTask.value = "";
   ELEMENT_Select.value = "";
+  ELEMENT_SUBMIT.innerText='Edit'
 }
 
 
