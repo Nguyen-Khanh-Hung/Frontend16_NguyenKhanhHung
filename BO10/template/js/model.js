@@ -1,16 +1,14 @@
-btnAddTask.addEventListener('click', function () {
+  btnAddTask.addEventListener('click', function () {
   formAddTask.style.display = "block";
   btnAddTask.style.display = "none";
   closeTask.style.display = "block";
-}) 
+  }) 
 
-closeTask.addEventListener('click', function () {
+  closeTask.addEventListener('click', function () {
   formAddTask.style.display = "none";
   btnAddTask.style.display = "block";
   closeTask.style.display = "none";
-}) 
-
-
+  }) 
 
   let tasks = getLocalStorage();
   renderTask(tasks);
@@ -26,46 +24,38 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
     alert("Vui lòng nhập level");
     return false;
   }
-  
+
+  let tasks = getLocalStorage();
   let taskID = this.getAttribute("id");
   
-  let tasks = getLocalStorage();
-
     if (taskID ===0 || taskID) {
-    tasks[taskID] = {
-      
+    tasks[taskID] = {     
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     };
-   
     this.removeAttribute("id");
   }
   else {
     tasks.push({
-      
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     });
   }
+  
   ELEMENT_SUBMIT.innerHTML='Submit'
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTask(tasks);
   resetForm()
-});
-
-function cancelForm() {
-  formAddTask.style.display = "none";
-  btnAddTask.style.display = "block";
-  closeTask.style.display = "none";
-
-}
-
+  });
+  
 
 // FUNCTION SORT
 function ascendingTask(){
+
   let tasks = getLocalStorage();
 
   let valueSelect=document.getElementById('sort').value;
+
   tasks.sort((a,b)=>{
  
   if(valueSelect==="az"){
@@ -95,8 +85,9 @@ function ascendingTask(){
 //   });
 //   renderTask(taskSearch);
 // }
-// EDIT TASKS
 
+
+// EDIT TASKS
 
 function editTask(id) {
 
@@ -105,52 +96,64 @@ function editTask(id) {
   formAddTask.style.display = "block";
   btnAddTask.style.display = "none";
   closeTask.style.display = "block";
+
   if (tasks.length > 0) {
     ELEMENT_inputTask.value = tasks[id].name;
     ELEMENT_Select.value = tasks[id].level;
     ELEMENT_SUBMIT.setAttribute("id", id);
   }
-  
+
   ELEMENT_SUBMIT.innerText="Update"
  
 }
 
-// FUNCTION SEARCH TASKS
+  // FUNCTION SEARCH TASKS
   function searchFunction() {
     let valueSearchInput = document.getElementById("search").value;
     let tasks = getLocalStorage();
     var filterTasks= tasks.filter(function (value) {
   return value.name.toUpperCase().includes(valueSearchInput.toUpperCase());
+    
+ }
+ 
+ )
+ localStorage.setItem("tasks", JSON.stringify(tasks));
 
- })
     renderTask(filterTasks);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
 }
-// FUNCTION RESET
-function resetForm() {
+  // FUNCTION RESET
+  function resetForm() {
   ELEMENT_inputTask.value = "";
   ELEMENT_Select.value = "";
 
-}
+  }
 
 // DELETE TASKS
 
-function deleteTask(id) {
+  function deleteTask(id) {
   if (confirm("Are you sure want to delete")) {
     let tasks = getLocalStorage();
     tasks.splice(id, 1);
     localStorage.setItem("tasks", JSON.stringify(tasks));
     renderTask(getLocalStorage());
   }
-
-  // FUNCTION RENDERTASK
 }
-function renderTask(tasks) {
+
+  // FUNCTION CANCEL FORM
+ 
+   function cancelForm() {
+    formAddTask.style.display = "none";
+    btnAddTask.style.display = "block";
+    closeTask.style.display = "none";
+  
+    }
+
+ // FUNCTION RENDERTASK
+  function renderTask(tasks) {
   let content = "";
 
   tasks.forEach(function (task, index) {
-    return (content += ` <tr>
+    return content += ` <tr>
         <td class="text-center">${index + 1}</td>
         <td>${task.name}</td>
         <td class="text-center">
@@ -160,7 +163,7 @@ function renderTask(tasks) {
             <button type="button" class="btn btn-warning" onclick="editTask(${index})">Edit</button>
             <button type="button" class="btn btn-danger" onclick="deleteTask(${index})">Delete</button>
         </td>
-        </tr> `);
+        </tr> `;
   });
 
   document.querySelector("#taskRow").innerHTML = content;
