@@ -118,7 +118,6 @@ function editTask(id) {
  
  )
  localStorage.setItem("tasks", JSON.stringify(tasks));
-
     renderTask(filterTasks);
 }
   // FUNCTION RESET
@@ -145,7 +144,7 @@ function editTask(id) {
     formAddTask.style.display = "none";
     btnAddTask.style.display = "block";
     closeTask.style.display = "none";
-  
+    resetForm()
     }
 
  // FUNCTION RENDERTASK
