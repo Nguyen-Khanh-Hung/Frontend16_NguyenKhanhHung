@@ -13,6 +13,8 @@
   let tasks = getLocalStorage();
   renderTask(tasks);
 
+ 
+  
 // FUNCTION SUBMIT
 
 ELEMENT_SUBMIT.addEventListener("click", function () {
@@ -26,8 +28,9 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
   }
 
   let tasks = getLocalStorage();
+
   let taskID = this.getAttribute("id");
-  
+  // Kiểu nếu nó kh cho id thì push vào thằng dưới
     if (taskID ===0 || taskID) {
     tasks[taskID] = {     
       name: ELEMENT_inputTask.value,
@@ -40,14 +43,34 @@ ELEMENT_SUBMIT.addEventListener("click", function () {
       name: ELEMENT_inputTask.value,
       level: ELEMENT_Select.value,
     });
-  }
-  
+  } 
   ELEMENT_SUBMIT.innerHTML='Submit'
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTask(tasks);
   resetForm()
   });
   
+
+  // FUNCTION RENDERTASK
+  function renderTask(tasks) {
+    let content = "";
+  
+    tasks.forEach(function (task, index) {
+      return content += ` <tr>
+          <td class="text-center">${index + 1}</td>
+          <td>${task.name}</td>
+          <td class="text-center">
+          <span id="ele" class="label ${task.level}" >${task.level}</span>
+          </td>
+          <td>
+              <button type="button" class="btn btn-warning" onclick="editTask(${index})">Edit</button>
+              <button type="button" class="btn btn-danger" onclick="deleteTask(${index})">Delete</button>
+          </td>
+          </tr> `;
+    });
+  
+    document.querySelector("#taskRow").innerHTML = content;
+  }
 
 // FUNCTION SORT
 function ascendingTask(){
@@ -147,27 +170,8 @@ function editTask(id) {
     resetForm()
     }
 
- // FUNCTION RENDERTASK
-  function renderTask(tasks) {
-  let content = "";
+ 
 
-  tasks.forEach(function (task, index) {
-    return content += ` <tr>
-        <td class="text-center">${index + 1}</td>
-        <td>${task.name}</td>
-        <td class="text-center">
-        <span id="ele" class="label ${task.level}" >${task.level}</span>
-        </td>
-        <td>
-            <button type="button" class="btn btn-warning" onclick="editTask(${index})">Edit</button>
-            <button type="button" class="btn btn-danger" onclick="deleteTask(${index})">Delete</button>
-        </td>
-        </tr> `;
-  });
-
-  document.querySelector("#taskRow").innerHTML = content;
-}
-
-function getLocalStorage() {
-  return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")): [];
-}
+    function getLocalStorage() {
+      return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")): [];
+    }
