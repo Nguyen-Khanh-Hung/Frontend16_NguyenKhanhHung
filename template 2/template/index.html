@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TODOLIST</title>
+    <title>Bootstrap 101 Template</title>
 	
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
 		<!-- TITLE : START -->
 		<div class="page-header">
-		  <h1>Project 01 - ToDo List <small>NodeJS</small></h1>
+		  <h1>Project - ToDo List </h1>
 		</div>
 		<!-- TITLE : END -->
 
@@ -34,55 +34,60 @@
 			<!-- SEARCH : START -->
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 				<div class="input-group">
-					<input id="search" type="text" class="form-control" ref="search" placeholder="Search for..." />
+					<input type="text" class="form-control" ref="search" placeholder="Search for..." />
 					<span class="input-group-btn">
-						<button  class="btn btn-info" type="button" onclick="searchFunction()">Go!</button>
+						<button  class="btn btn-info" type="button">Go!</button>
 					</span>
 				</div>
 			</div>
 			<!-- SEARCH : END -->
-			<div class="dropdown">
-				<label for="sort"></label><select  id="sort" onchange="ascendingTask()">
-					<option value="default">SORT BY</option>
-					<option value="az">NAME A - Z</option>
-					<option value="za">NAME Z - A</option>
-					<option value="levelHigh">LEVEL A - Z</option>
-					<option value="Highlevel">LEVEL Z - A</option>
-				</select>
-		</div>
-		
+
+			<!-- SORT : START -->
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Sort by <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a role="button">Name ASC</a></li>
+						<li><a role="button">Name DESC</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a role="button">Level ASC</a></li>
+						<li><a role="button">Level DESC</a></li>
+					</ul>
+					<span class="label label-success label-medium">NAME - DESC</span>
+				</div>
+			</div>
+			<!-- SORT : END -->
+
 			<!-- ADD : START -->
-			<div class="col-md-offset-7 col-md-9" style="margin-left: 330px;margin-top: -30px;width: 350px;";>
-				<button type="button" id="btnAddTask" style="outline: none;" class="btn btn-info btn-block">Add Task</button>
-				<button  type="button" id="btnCloseTask" style="outline: none;margin-top: 0;   background-color: red;;
-				color: white;" class="btn btn-info btn-block">Close Task</button>
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<button type="button" id="button_form" class="btn btn-info btn-block">Add Task</button>
 			</div>
 			<!-- ADD : END -->
 
 		</div>
-		<!-- CONTROL (SEARCH + 
-			
-			+ ADD) : END -->
+		<!-- CONTROL (SEARCH + SORT + ADD) : END -->
 		
 		<!-- FORM : START -->
 		<div class="row">
-			<div class="col-md-offset-7 col-md-6" id="formAddTask">
-				<form action="" method="POST" class="form-inline" >
+			<div class="col-md-offset-7 col-md-5">
+				<form action="" hidden id="formInput" method="POST" class="form-inline"  >
 					<div class="form-group">
 						<label class="sr-only" for="">label</label>
-						<input type="text" id="input__task" class="form-control" placeholder="Task Name" ref="task_name" />
+						<input id="input_name" type="text" class="form-control" placeholder="Task Name" ref="task_name" />
 					</div>
 					<div class="form-group">
 						<label class="sr-only" for="">label</label>
-						<select name="ds" id="inputDs" class="form-control" required="required" ref="task_level">
-							<option selected="selected" value="Small" >Small</option>
-							<option id="1"  value="Medium" >Medium</option>
-							<option id="2" value="High">High</option>
+						<select id="input_level" name="ds" id="inputDs" class="form-control" required="required" ref="task_level">
+							<opti value="Small" >Small</option>
+							<option value="Medium">Medium</option>
+							<option value="High">High</option>
 						</select>
 					</div>
-					<input type="hidden" id="input_id" value="">
-					<button  type="button" class="btn btn-submit btn-primary">Submit</button>
-					<button onclick="cancelForm()" type="button" id="btn-cancel" class="btn btn-default" >Cancel</button>
+					<input type="text" id="input_id" value="">
+					<button type="button" id="button_submit" class="btn btn-primary">Submit</button>
+					<button type="button" id="button_cacel" class="btn btn-default">Cancel</button>
 				</form>
 			</div>
 		</div>
@@ -92,18 +97,20 @@
 
 		<div class="panel panel-success" >
 			<div class="panel-heading">List Task</div>
-			<table id="tableTask" class="table table-hover ">
+			<table class="table table-hover ">
 				<thead>
 					<tr>
-						<th style="width: 10%" class="text-center">ID</th>
+						<th style="width: 10%" class="text-center">#</th>
 						<th>Task</th>
 						<th style="width: 20%" class="text-center">Level</th>
 						<th style="width: 20%">Action</th>
 					</tr>
 				</thead>
-				<tbody id="taskRow">
+
+				<tbody id="content-showData">
 					
 				</tbody>
+
 			</table>
 		</div>
 	</div>
@@ -121,9 +128,8 @@
 	<script src="js/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-
-	<script src="./js/const.js"></script>
 	<script src="./js/model.js"></script>
+	<script src="./js/const.js"></script>
 	<script src="./js/view.js"></script>
 </body>
 </html>

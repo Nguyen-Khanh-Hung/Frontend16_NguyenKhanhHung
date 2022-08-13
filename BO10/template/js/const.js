@@ -7,7 +7,7 @@ const ELEMENT_Select   =    document.getElementById("inputDs");
 const ELEMENT_Cancel   =    document.getElementById("btn-cancel");
 const search           =    document.getElementById("search");
 const ELEMENT_TABLETASK=    document.getElementById("tableTask")
-
+const ELEMENT_INPUT_ID = document.getElementById("input_id");
 const ELEMENT_SORT     =         document.getElementById("sort")
 let close = true;
 
