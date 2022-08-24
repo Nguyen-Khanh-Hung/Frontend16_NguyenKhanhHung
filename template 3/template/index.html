@@ -80,12 +80,12 @@
 					<div class="form-group">
 						<label class="sr-only" for="">label</label>
 						<select id="input_level" name="ds" id="inputDs" class="form-control" required="required" ref="task_level">
-							<opti value="Small" >Small</option>
+							<option value="Small" >Small</option>
 							<option value="Medium">Medium</option>
 							<option value="High">High</option>
 						</select>
 					</div>
-					<input type="text" id="input_id" value="">
+					<input type="hidden" id="input_hidden">
 					<button type="button" id="button_submit" class="btn btn-primary">Submit</button>
 					<button type="button" id="button_cacel" class="btn btn-default">Cancel</button>
 				</form>
@@ -128,8 +128,8 @@
 	<script src="js/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	<script src="./js/model.js"></script>
 	<script src="./js/const.js"></script>
+	<script src="./js/model.js"></script>
 	<script src="./js/view.js"></script>
 </body>
 </html>

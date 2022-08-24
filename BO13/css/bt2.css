@@ -1,0 +1,31 @@
+.container{
+    margin: 0 auto;
+    text-align: center;
+}
+.big{
+    font-size: 30px;
+}
+.small{
+    font-size: 10px;
+}
+#text{
+    padding: 100px;
+}
+.box{
+    height: 60px;
+    width: 40px;
+    margin-right: 20px;
+}
+.box1{
+    background-color: gray;
+    
+}
+.box2{
+    background-color: blue;
+}
+.box3{
+    background-color: red;
+}
+.box4{
+    background-color: yellow;
+}

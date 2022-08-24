@@ -19,15 +19,15 @@
     for (var i = 0; i < length; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
-
+    
 }
+
 
   
 // FUNCTION SUBMIT
 
 ELEMENT_SUBMIT.addEventListener("click", function() {
-
-  if (!ELEMENT_inputTask.value) {
+  if (!ELEMENT_inputTask.value.trim()) {
     alert("Vui lòng nhập task");
     return false;
   }
@@ -38,21 +38,12 @@ ELEMENT_SUBMIT.addEventListener("click", function() {
 
   let tasks = getLocalStorage();
 
-  let taskID=this.getAttribute("id");
-
-  let id= taskID? taskID :randomString(20);
+  let id= ELEMENT_INPUT_ID.value? ELEMENT_INPUT_ID.value :randomString(20);
  
-  if(taskID){
-    tasks[taskID]={
-        id,
-        name: ELEMENT_inputTask.value,
-        level: ELEMENT_Select.value,
-    }
-    console.log(tasks[taskID]);
-    this.removeAttribute('id')
+  if(ELEMENT_INPUT_ID.value){
+    editItem()
     localStorage.setItem("tasks", JSON.stringify(tasks));
      renderTask(tasks)
-
     }
     else{
       tasks.push({
@@ -60,10 +51,8 @@ ELEMENT_SUBMIT.addEventListener("click", function() {
         name: ELEMENT_inputTask.value,
         level: ELEMENT_Select.value,
       });
-      
     }
   ELEMENT_SUBMIT.innerHTML='Submit'
-  
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTask(tasks);
   resetForm()
@@ -77,27 +66,32 @@ const getId= (id)=>{
 
 }
 const showEditForm=(id)=>{
-
   let item=getId(id)
   formAddTask.style.display = "block";
   btnAddTask.style.display = "none";
   closeTask.style.display = "block";
   showItemForm(item)
-
 }
 
 const showItemForm=(item)=>{
- 
     ELEMENT_inputTask.value = item.name;
     ELEMENT_INPUT_ID.value= item.id;
     ELEMENT_Select.value=item.level;
-    ELEMENT_SUBMIT.setAttribute("id",item.id);
-
 }
 
+const editItem = (item) => {
+  let tasks = getLocalStorage();
+  tasks = tasks.map(it => {
+      return it.id == item.id ? item : it
+  })
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  renderTask(tasks)
+}
   // FUNCTION RENDERTASK
-  function renderTask(tasks) {
+function renderTask(tasks) {
     let content = "";
+    console.log(tasks);
+    
     tasks.forEach(function(task, index) {
       let id=task.id;
       return content += `<tr>
@@ -108,11 +102,13 @@ const showItemForm=(item)=>{
           </td>
           <td>
               <button type="button" class="btn btn-warning" onclick="showEditForm('${id}')">Edit</button>
-              <button type="button" class="btn btn-danger" onclick="deleteTask('${index}')">Delete</button>
+              <button type="button" class="btn btn-danger" onclick="deleteTask('${id}')">Delete</button>
           </td>
           </tr> `;
     });
     document.querySelector("#taskRow").innerHTML = content;
+    console.log(content);
+    
   }
 
 
@@ -146,12 +142,15 @@ function ascendingTask(){
   if(valueSelect==="az"){
     return a.name.localeCompare(b.name)
   }
+
   else if(valueSelect==="za"){
     return b.name.localeCompare(a.name)
   }
+
   else if(valueSelect === "levelHigh"){
     return a.level.localeCompare(b.level)
   }
+  
   else if(valueSelect === "Highlevel"){
     return b.level.localeCompare(a.level)
 
@@ -162,7 +161,7 @@ function ascendingTask(){
 }
 
   // FUNCTION SEARCH TASKS
-  function searchFunction() {
+function searchFunction() {
     let valueSearchInput = document.getElementById("search").value;
     let tasks = getLocalStorage();
     var filterTasks= tasks.filter(function (value) {
@@ -173,36 +172,49 @@ function ascendingTask(){
  localStorage.setItem("tasks", JSON.stringify(tasks));
     renderTask(filterTasks);
 }
+
+function add(){
+  let tasks = localStorage.getItem("tasks");
+  tasks.push({
+    id,
+    name: ELEMENT_inputTask.value,
+    level: ELEMENT_Select.value,
+  });
+}
   // FUNCTION RESET
-  function resetForm() {
+function resetForm() {
   ELEMENT_inputTask.value = "";
   ELEMENT_Select.value = "Small";
-
-  }
+  ELEMENT_INPUT_ID.value=""
+}
 
 // DELETE TASKS
 
-  function deleteTask(id) {
-    console.log(id);
-   
-    
-  if (confirm("Are you sure want to delete")) {
-    let tasks = getLocalStorage();
-    tasks.splice(id, 1);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    renderTask(getLocalStorage());
-  }
+function deleteTask(id) {
+  let tasks = getLocalStorage();
+    if(confirm("Are you sure you want to delete")==true){
+      // for (var i = 0; i < tasks.length; i++) {
+      //   if(tasks[i].id==id){
+      //     tasks.splice(i,1)
+      //   }
+      // }
+      let idItem= tasks.find(item=>item.id==id) 
+      let inDex=tasks.indexOf(idItem)
+      tasks.splice(inDex,1)
+      console.log(idItem);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTask(getLocalStorage());
+    }
 }
-
   // FUNCTION CANCEL FORM
  
-   function cancelForm() {
+function cancelForm() {
     formAddTask.style.display = "none";
     btnAddTask.style.display = "block";
     closeTask.style.display = "none";
     resetForm()
     }
 
-    function getLocalStorage() {
-      return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")): [];
-    }
+function getLocalStorage() {
+  return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")): [];
+}

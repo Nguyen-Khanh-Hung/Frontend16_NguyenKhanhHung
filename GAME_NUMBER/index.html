@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="game-title">
+            <h1>GAME TÌM SỐ BÍ MẬT</h1>
+        </div>
+        <div class="section-game">
+            <div id="game-number">
+                <div class="box"></div>
+            </div>
+            <div id="game-notify">
+                <div id="health" class="flex">
+                <p class="health__sub">Số lần chơi của bạn:</p>
+                <div class="game__health-icon"></div>
+                <i class="fa-solid fa-heart health__icon active--1"></i>
+                <i class="fa-solid fa-heart health__icon--2 active--2"></i>
+                <i class="fa-solid fa-heart health__icon--3 active--3" ></i>
+                </div>
+                <div class="order">
+                <div> <span class="number-turn"></span> </div>
+                <div class="incorrect hidden"><p class="wrong-answer-1 "></p> </div>
+                </div>
+                <div class="order">
+                    <div><span class="number-turn-2"></span></div>
+                    <div class="incorrect_2 hidden"><p class="wrong-answer-2 "></p></div>
+                    </div>
+                <div class="order">
+                    <div><span class="number-turn-3"></span></div>
+                    <div class="incorrect_3 hidden"><p class="wrong-answer-3 "></p></div>
+                    </div>
+                <div class="flex secret">
+                   <div class="secret-text"> <p>Số bí mật</p> </div>
+                   <div class="secret-number"> <p id="js-showNumber"></p> </div>
+                </div>
+            </div>
+        </div>
+        <div class="options">
+            <button id="reset-game"><a href="http://127.0.0.1:5500/GAME_NUMBER/index.html">Chơi lại</a> </button>
+            <button id="suggest">Gợi ý</button>
+            <button id="save-game">Lưu game</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/const.js"></script>
+    <script src="./js/model.js"></script>
+    <script src="./js/view.js"></script>
+</body>
+</html>
