@@ -16,18 +16,22 @@ html{
     display: none;
 }
 .container{
+    padding: 10px;
     max-width: 1000px;
     width: 100%;
     margin: 10px auto;
     text-align: center;
     background-color: #faf8ef;
-    border-radius: 2px;
+    border-radius: 3px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .game-title h1{
     padding-top: 30px;
     color: #fc4747;
+    font-weight: 600;
 }
 .section-game{
+    padding: 10px;
     margin-top: 30px;
     display: flex;
 }
@@ -93,7 +97,7 @@ html{
     font-weight: 600;
 }
 .options{
-    margin-top: 20px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -113,6 +117,13 @@ html{
     border-radius: 2px;
     text-transform: uppercase;
     background-color: #ffcd44;
+}
+#reset-game:hover a{
+    color: #FFF;
+}
+.options button:hover{
+    background-color: red;
+    color: #FFF;
 }
 .options button:hover{
    opacity: 0.8;

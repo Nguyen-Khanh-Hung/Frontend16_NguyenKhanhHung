@@ -19,6 +19,9 @@ const ELEMENT_HEALTH_ICON_2       = document.querySelector('.health__icon--2')
 const ELEMENT_HEALTH_ICON_3      = document.querySelector('.health__icon--3')
 const RESET_GAME                 = document.getElementById('reset-game')
 
+const level=25
+var arr=[]
+var one = 0;
 
 
 
